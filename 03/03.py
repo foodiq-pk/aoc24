@@ -1,5 +1,5 @@
 import re
-
+from typing import Any
 
 
 def get_multiplied_numbers_sum(data: str) -> int:
@@ -7,9 +7,9 @@ def get_multiplied_numbers_sum(data: str) -> int:
     return sum([int(a)*int(b) for a,b in numbers])
 
 
-def find_valid_instructions(data: str):
-    data = re.findall(r"mul\((\d+),(\d+)\)|(do)\(\)|(don't)\(\)", data)
-    return data
+def find_valid_instructions(data: str) -> list[Any]:
+    valid_instructions = re.findall(r"mul\((\d+),(\d+)\)|(do)\(\)|(don't)\(\)", data)
+    return valid_instructions
 
 def parse_instructions(instructions):
     return [[x for x in instruction if x] for instruction in instructions]

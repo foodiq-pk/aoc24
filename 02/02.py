@@ -1,3 +1,6 @@
+from xmlrpc.client import boolean
+
+
 def is_report_safe(report: list[int]) -> bool:
     last_change = None
     for i in range(len(report)):
@@ -14,7 +17,7 @@ def is_report_safe(report: list[int]) -> bool:
                 continue
             else:
                 return False
-
+    return True
 
 
 
